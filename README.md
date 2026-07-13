@@ -1,67 +1,51 @@
-# AES
+# Engineering Workbench Toolkit (EWT)
 
-AES is the Atarix Engineering Standard.
-
-This repository is the canonical engineering-standards authority for the Catalyst ecosystem. It contains the engineering creed, standards, decision records, research notes, case studies, and templates that guide how projects are designed, documented, reviewed, secured, verified, and maintained.
-
-## Purpose
-
-AES exists to preserve engineering knowledge so future maintainers can understand what was built, why it was built, how it must be validated, and how it should evolve.
-
-## Pillar I
-
-First, Observe. Then, Understand. Then, Improve.
-
-Observation precedes understanding. Understanding precedes improvement.
+EWT is the shared engineer-facing workbench for Catalyst projects. It provides workspace management, project modeling, toolchain orchestration, debugging, packaging, and user interfaces without owning governance, engineering standards, or compliance authority.
 
 ## Authority Chain
 
-- Catylist defines program governance, repository relationships, and authority boundaries.
-- AES defines engineering obligations, standards, and required evidence.
-- AEMS manages the Catalyst project and verifies or enforces AES requirements.
-- Project repositories implement systems and maintain project-specific specifications, ADRs, tests, and evidence.
-- Just-a-Geek-LLC owns company and public-facing organizational material.
-
-The policy dependency direction is:
-
 ```text
-Catylist → AES → AEMS → governed repositories
+Catylist -> AES -> AEMS -> governed repositories
 ```
 
-AES must not redefine Catylist governance. AEMS must not redefine AES requirements. Downstream repositories may extend AES locally but may not weaken an AES requirement without an explicit waiver or ADR permitted by the governing standard.
+EWT is a governed repository in that chain:
 
-## Repository Role
+- **Catylist** defines ecosystem governance and repository authority.
+- **AES** defines normative engineering requirements.
+- **AEMS** evaluates and enforces those requirements.
+- **EWT** provides the engineer's operational toolbox.
+- **Atarix, EVO, JAG, EDT, and future projects** use EWT to build, inspect, debug, package, and operate their systems.
 
-AES owns:
+## Scope
 
-- engineering principles and development discipline;
-- secure coding requirements;
-- documentation, testing, build, versioning, CI/CD, observability, optimization, and release standards;
-- standard-level evidence requirements;
-- standard templates and normative terminology;
-- engineering-standard ADRs and revision history.
+EWT is organized around four major subsystems:
 
-AES does not own:
+1. **Core**
+   - workspace management
+   - project model
+   - package management
+   - configuration
+2. **Toolchain**
+   - assembler integration
+   - C compiler integration
+   - linker integration
+   - image builders
+3. **Debug**
+   - simulator control
+   - hardware debug
+   - register inspection
+   - tracing
+   - profiling
+4. **UX**
+   - CLI
+   - VS Code and LSP integration
+   - terminal UI
+   - scripting APIs
 
-- Catalyst program governance;
-- AEMS scanner or project-management implementations;
-- project-specific architecture and implementation specifications;
-- company or public-facing content.
+## Boundaries
 
-## Current Structure
+EWT does not define engineering policy. It consumes AES requirements and produces artifacts and evidence that AEMS can evaluate. EDT remains the semantic document-processing platform; EWT may invoke EDT for document build or publication workflows but does not duplicate it.
 
-- `creed/`: foundational philosophy;
-- `standards/`: engineering standards and practices;
-- `adr/`: engineering-standard decision records;
-- `research/`: investigations and proposed methods;
-- `case-studies/`: operational lessons;
-- `templates/`: document and rule templates;
-- `references/`: external influences and source material.
+## Current Phase
 
-## Current Status
-
-AES is in active foundation work. The immediate objective is to stabilize the existing core standards, establish machine-readable standard metadata, and provide a consistent standard structure before adding further downstream enforcement.
-
-## Core Idea
-
-Technology is temporary. Engineering knowledge endures.
+Architecture and bootstrap. Significant implementation should follow approved specifications and ADRs.
