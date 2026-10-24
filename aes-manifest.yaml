@@ -1,44 +1,45 @@
+manifest_version: 1.0.0
 schema_version: 1
+
 repository:
-  name: AES
-  full_name: dlworrell/AES
-  role: engineering-standards-authority
+  id: EWT
+  name: Engineering Workbench Toolkit
+  full_name: dlworrell/EWT
+  owner: dlworrell
+  role: engineering-workbench
   ownership: project-owned
   lifecycle: active
   maturity: foundation
-  documentation_authority: local
-  authoritative_paths:
+  primary_branch: main
+  issue_tracker: https://github.com/dlworrell/EWT/issues
+
+documentation:
+  authority: local
+  roots:
     - README.md
-    - standards
+    - docs
     - adr
-    - creed
-    - templates
-    - research
-    - case-studies
-    - references
+
 governance:
   authority_repository: dlworrell/Catylist
-  authority_document: docs/adr/ADR-003-authority-chain.md
+  standards_repository: dlworrell/AES
   managed_by: dlworrell/AEMS
   dependency_direction:
     upstream:
       - dlworrell/Catylist
-    downstream:
+      - dlworrell/AES
       - dlworrell/AEMS
-      - dlworrell/repo_templates
-      - dlworrell/evo
+    downstream:
       - dlworrell/atarix
+      - dlworrell/evo
       - dlworrell/JAG
+      - dlworrell/engineering-docs-toolkit
+
 standards:
-  core:
-    - id: AES-000
-      status: foundation
-    - id: AES-DEV-001
-      path: standards/AES-DEV-001-development-principles-and-check-in-discipline.md
-      status: draft
-    - id: AES-SEC-001
-      path: standards/AES-SEC-001-secure-c-cpp-coding-rules.md
-      status: adopted
+  applicable:
+    - AES-DEV-001
+    - AES-SEC-001
+
 compliance:
   required_profiles:
     - AES-DEV-001
