@@ -49,3 +49,7 @@ EWT does not define engineering policy. It consumes AES requirements and produce
 ## Current Phase
 
 Architecture and bootstrap. Significant implementation should follow approved specifications and ADRs.
+
+## Releasing
+
+Changes move `dev-daily` → `fitment` → `main`, and a release is published only after the owner approves it. See [docs/RELEASING.md](docs/RELEASING.md).
