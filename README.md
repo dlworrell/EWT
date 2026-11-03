@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Donovan Worrell
+SPDX-License-Identifier: Apache-2.0
+Catalyst-File-ID: urn:uuid:ec0ba67e-f344-4e1d-b646-531e52eb9883
+-->
+
 # Engineering Workbench Toolkit (EWT)
 
 EWT is the shared engineer-facing workbench for Catalyst projects. It provides workspace management, project modeling, toolchain orchestration, debugging, packaging, and user interfaces without owning governance, engineering standards, or compliance authority.
